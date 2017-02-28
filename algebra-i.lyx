@@ -1,0 +1,889 @@
+#LyX file created by tex2lyx 2.2
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin C:/Users/yago/Dropbox/2-proyectos/Grado matemáticas/Algebra Lineal I/Apuntes/
+\textclass scrbook
+\begin_preamble
+\usepackage[spanish]{babel}
+\usepackage{amsfonts}
+
+
+
+\newtheorem{theorem}{Teorema}
+
+
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+
+\lang spanish
+Matrices
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Definiciones
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Una 
+\series bold
+matriz
+\series default
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ de tamaño 
+\begin_inset Formula $m \times n$
+\end_inset
+
+ de elementos de un cuerpo 
+\begin_inset Formula $\mathbb{K}$
+\end_inset
+
+ que están ordenados en 
+\begin_inset Formula $m$
+\end_inset
+
+ filas y 
+\begin_inset Formula $n$
+\end_inset
+
+ columnas de la forma: 
+\begin_inset Formula \[
+A=(a_{ij})=\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}  \\
+a_{21} & a_{22} & \cdots & a_{2n}  \\
+\vdots & \vdots & \ddots & \vdots  \\
+a_{n1} & a_{n2} & \cdots & a_{nn}  \\
+\end{pmatrix}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Las entradas 
+\begin_inset Formula $(i,j)$
+\end_inset
+
+ se pueden denotar como 
+\begin_inset Formula $a_{ij}$
+\end_inset
+
+ o como 
+\begin_inset Formula $[A]_{ij}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset Formula $\mathfrak{M}_{m \times n}(\mathbb{K})$
+\end_inset
+
+ es el 
+\series bold
+conjunto de matrices
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Una 
+\series bold
+matriz cuadrada
+\series default
+ o de 
+\series bold
+orden 
+\begin_inset Formula $n$
+\end_inset
+
+
+\series default
+ es aquella con igual número de filas y columnas.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La 
+\series bold
+diagonal principal
+\series default
+ de una matriz cuadrada es: 
+\begin_inset Formula \[
+diag(A) = (a_{11}, a_{22},...,a_{nn})
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La 
+\series bold
+traza
+\series default
+ de A es la suma de los elementos de la diagonal. 
+\begin_inset Formula \[
+tr(A) = \sum_{i=1}^{n}{a_{ij}}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La 
+\series bold
+subdiagonal
+\series default
+ es 
+\begin_inset Formula $(a_{21}, a_{32},...,a_{nn-1})$
+\end_inset
+
+ y la 
+\series bold
+superdiagonal
+\series default
+ es 
+\begin_inset Formula $(a_{12}, a_{23},...,a_{n-1n})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La 
+\series bold
+matriz traspuesta 
+\begin_inset Formula $A^t$
+\end_inset
+
+
+\series default
+ es aquella en la que cada entrada 
+\begin_inset Formula $(i,j)$
+\end_inset
+
+ es igual a la entrada 
+\begin_inset Formula $(j,i)$
+\end_inset
+
+ de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Una 
+\series bold
+matriz simétrica
+\series default
+ es una matriz 
+\series bold
+cuadrada
+\series default
+ que coincide con su traspuesta.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Una 
+\series bold
+matriz antisimétrica
+\series default
+ es una matriz cuadrada que coincide con su traspuesta cambiada de signo.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La 
+\series bold
+matriz traspuesta conjugada
+\series default
+ es la matriz cuadrada en la que cada entrada 
+\begin_inset Formula $(i,j)$
+\end_inset
+
+ es igual al conjugado de la entrada 
+\begin_inset Formula $(j,i)$
+\end_inset
+
+ de 
+\begin_inset Formula $A$
+\end_inset
+
+. (
+\begin_inset Formula $\overline{a+ib}=a-ib$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La 
+\series bold
+matriz hermítica
+\series default
+ es una matriz cuadrada que coincide con su transpuesta conjugada.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Una 
+\series bold
+matriz diagonal
+\series default
+ 
+\begin_inset Formula $diag(d_{1},d_{2},...,d_{n})$
+\end_inset
+
+ es una matriz cuadrada o de orden 
+\begin_inset Formula $n$
+\end_inset
+
+ en el que todos los elementos fuera de su diagonal principal son 0. Toda matriz diagonal es triangulas superior y triangular inferior.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La 
+\series bold
+identidad
+\series default
+ es una matriz diagonal con todas las entradas en su diagonal a 1.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Una 
+\series bold
+matriz nula
+\series default
+ es una matriz con todas sus entradas a 0. También es una matriz diagonal a 0.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Una 
+\series bold
+fila/columna nula
+\series default
+ es aquella que tiene todas sus entradas a 0.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Una 
+\series bold
+submatriz
+\series default
+ de 
+\begin_inset Formula $A$
+\end_inset
+
+ se obtiene eliminando de 
+\begin_inset Formula $A$
+\end_inset
+
+ algunas filas o columnas.
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Operaciones
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Suma de matrices y producto por un escala
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset Formula \[
+[A+B]_{ij} = a_ij + b_ij
+\]
+\end_inset
+
+
+\begin_inset Formula \[
+A+B=\begin{pmatrix}
+a_{11} + b_{11} & a_{12} + b_{12} & \cdots & a_{1n} + b_{1n} \\
+a_{21} + b_{21} & a_{22} + b_{22} & \cdots & a_{2n} + b_{2n} \\
+\vdots & \vdots & \ddots & \vdots  \\
+a_{n1} + b_{n1} & a_{n2} + b_{n2} & \cdots & a_{nn} + b_{nn} \\
+\end{pmatrix}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset Formula \[
+[\lambda A]_{ij}=\lambda a_{ij}
+\]
+\end_inset
+
+
+\begin_inset Formula \[
+\lambda A = \begin{pmatrix}
+\lambda a_{11} & \lambda a_{12} & \cdots & \lambda a_{1n}  \\
+\lambda a_{21} & \lambda a_{22} & \cdots & \lambda a_{2n}  \\
+\vdots & \vdots & \ddots & \vdots  \\
+\lambda a_{n1} & \lambda a_{n2} & \cdots & \lambda a_{nn}  \\
+\end{pmatrix}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{theorem}[Leyes de la suma de matrices y producto por un escalar]
+\end_layout
+
+\end_inset
+
+ La suma de matrices y el producto por un escalar cumple: 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{enumerate}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Asociativa: 
+\begin_inset Formula $A+B+C=(A+B)+C=A+(B+C)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Conmutativa: A+B=B+A 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Neutro: A + 0 = A 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Inverso: A + (-A) = 0 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Distributiva respecto a la suma de matrices: 
+\begin_inset Formula $\alpha (A+B) = \alpha A + \alpha B$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Distributiva respecto a la suma de escalares: 
+\begin_inset Formula $(\alpha\beta)A = \alpha(\beta A)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Unidad del cuerpo: 
+\begin_inset Formula $1A = A$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{enumerate}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{theorem}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Producto de matrices
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+El producto de matrices tiene sentido si el número de columnas de 
+\begin_inset Formula $A$
+\end_inset
+
+ coincide con el número de filas de 
+\begin_inset Formula $B$
+\end_inset
+
+. 
+\begin_inset Formula \[
+[AB]_{ij} = \sum_{k=1}^{n}{a_{ik}b_{kj}}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{theorem}[Leyes del producto de matrices]
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{enumerate}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Asociativa: A(BC)=(AB)C 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Elemento neutro por la derecha: 
+\begin_inset Formula $AI_n = A$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Elemento neutro por la izquierda: 
+\begin_inset Formula $I_nA=A$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Asociativa respecto al producto de escalares: 
+\begin_inset Formula $\alpha(AB)=(\alpha A)B=A(\alpha B)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Distributiva respecto a la suma de matrices por la derecha: A(B+C)=AB+AC 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Distributiva respecto a la suma de matrices por la izquierda: (A+B)C=AC+BC 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{enumerate}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{theorem}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Se puede observar que el producto de matrices no cumple la propiedad conmutativa.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Producto de matrices por blques
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset Formula \[
+A=\left(\begin{array}{c|c|c|c}
+A_{11} & A_{12} & \cdots & A_{1n}  \\
+\hline
+A_{21} & A_{22} & \cdots & A_{2n}  \\
+\hline
+\vdots & \vdots & \ddots & \vdots  \\
+\hline
+A_{n1} & A_{n2} & \cdots & A_{nn}  \\
+\end{array}\right)
+B=\left(\begin{array}{c|c|c|c}
+B_{11} & B_{12} & \cdots & B_{1n}  \\
+\hline
+B_{21} & B_{22} & \cdots & B_{2n}  \\
+\hline
+\vdots & \vdots & \ddots & \vdots  \\
+\hline
+B_{n1} & B_{n2} & \cdots & B_{nn}  \\
+\end{array}\right)
+\]
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

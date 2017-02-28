@@ -1,0 +1,40 @@
+\chapter{Aplicaciones lineales}
+
+\begin{defi}
+	Una aplicación $f: U \longrightarrow V$ entre $\mathbb{K}$-espacios vectoriales es \textbf{una aplicación lineal} si para todo $u,w \in U$ y todo $\alpha \in \mathbb{K}$ se cumplen las siguientes propiedades:
+	\begin{enumerate}
+		\item $f(u+v) = f(u) + f(v)$.
+		\item $f(\alpha u) = \alpha f(u)$.
+	\end{enumerate}
+	O equivalentemente, si $\forall u,v \in U,\forall \alpha,\beta \in \mathbb{K}$ se cumple:
+	\[
+	f(\alpha u + \beta v) = \alpha f(u) + \beta f(v)
+	\]
+\end{defi}
+
+Denotamos $\mathcal{L}(U,V)$ como el conjunto de aplicaciones lineales:
+\[
+\mathcal{L}(U,V) \equiv \lbrace f: U \longleftarrow V: f \ es \ una \ aplicacion \ lineal \rbrace
+\]
+
+Toda aplicación lineal queda completamente determinada conociendo las imágenes de los vectores de una base.
+
+\begin{prop}
+	Sea $f: U \longrightarrow V:$ una aplicación lineal. Son ciertas las afirmaciones:
+	\begin{enumerate}
+		\item $f(0_U)=0_V$.
+		\item $f(\alpha_1 u_1 + \cdots + \alpha_n u_n) = \alpha_1 f(u_1) + \cdots + \alpha_n f(u_n). \forall \alpha_1,\ldots,\alpha_n \in \mathbb{K},\forall u_1,\ldots,u_n \in U$
+	\end{enumerate}
+\end{prop}
+
+\begin{prop}
+	Sean $U$ y $V$ $\mathbb{K}$-espacios vectoriales, $\mathcal{B}=\lbrace u_1,\ldots, u_n \rbrace$ una base de $U$ y $v_1,\ldots,v_n$ vectores de $V$. Existe una única aplicación lineal $f: U \longleftarrow V$ tal que $f(u_i)=v_i$, para $i=1,\ldots,n$.
+\end{prop}
+
+\begin{proof}
+	Definimos la aplicación $f$ tal que $f(u_i)=v_i$, para $i=1,\ldots,n$ y que para un vector cualquiera $x=(x_1,\ldots,x_n)_\mathbb{B}$ de $U$ cumple que:
+	\[
+	f(x)=x_1 f(u_1) + \cdots + x_n f(x_n)
+	\] 
+	Comprobamos que $f$ es aplicación lineal. Sean $x=()$
+\end{proof}

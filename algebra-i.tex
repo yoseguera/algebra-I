@@ -1,0 +1,27 @@
+\documentclass[12pt,a4paper,parskip=full]{scrbook}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm} 
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{prop}{Proposición}[chapter]
+\newtheorem{defi}{Definición}[chapter]
+\newtheorem{lem}{Lema}[chapter]
+
+\begin{document}
+
+\title{Álgebra I}
+\maketitle
+\tableofcontents
+
+\include{1-matrices}
+\include{2-sistemas-lineales}
+\include{3-sistemas-vectoriales}
+\include{4-aplicaciones-lineales}
+
+\end{document}

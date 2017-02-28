@@ -1,0 +1,551 @@
+\chapter{Matrices}
+
+\section{Definiciones}
+
+Una \textbf{matriz} $A$ de tamaño $m \times n$ elementos de un cuerpo $\mathbb{K}$ que están ordenados en $m$ filas y $n$ columnas de la forma:
+\[
+A=(a_{ij})=\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}  \\
+a_{21} & a_{22} & \cdots & a_{2n}  \\
+\vdots & \vdots & \ddots & \vdots  \\
+a_{n1} & a_{n2} & \cdots & a_{nn}  \\
+\end{pmatrix}
+\]
+
+Las entradas $(i,j)$ se pueden denotar como $a_{ij}$ o como $[A]_{ij}$.
+
+$\mathfrak{M}_{m \times n}(\mathbb{K})$ es el \textbf{conjunto de matrices}.
+
+Una \textbf{matriz cuadrada} o de \textbf{orden $n$} es aquella con igual número de filas y columnas.
+
+La \textbf{diagonal principal} de una matriz cuadrada es:
+\[
+diag(A) = (a_{11}, a_{22},...,a_{nn})
+\]
+
+La \textbf{traza} de A es la suma de los elementos de la diagonal.
+\[
+tr(A) = \sum_{i=1}^{n}{a_{ij}}
+\]
+
+Tiene las siguientes características:
+\begin{enumerate}
+\item $tr(A+B)=tr(A)+tr(B)$.
+\item $tr(\lambda A)=\lambda tr(A)$.
+\item $tr(A)=tr(A^t)$.
+\item $tr(AB)=tr(BA)$.
+\end{enumerate}
+
+La \textbf{subdiagonal} es $(a_{21}, a_{32},...,a_{nn-1})$ y la \textbf{superdiagonal} es $(a_{12}, a_{23},...,a_{n-1n})$.
+
+La \textbf{matriz traspuesta $A^t$} es aquella en la que cada entrada $(i,j)$ es igual a la entrada $(j,i)$ de $A$.
+
+Una \textbf{matriz simétrica} es una matriz \textbf{cuadrada} que coincide con su traspuesta.
+
+Una \textbf{matriz antisimétrica} es una matriz cuadrada que coincide con su traspuesta cambiada de signo.
+
+La \textbf{matriz traspuesta conjugada} es la matriz cuadrada en la que cada entrada $(i,j)$ es igual al conjugado de la entrada $(j,i)$ de $A$. ($\overline{a+ib}=a-ib$).
+
+La \textbf{matriz hermítica} es una matriz cuadrada que coincide con su transpuesta conjugada.
+
+Una \textbf{matriz diagonal} $diag(d_{1},d_{2},...,d_{n})$ es una matriz cuadrada o de orden $n$ en el que todos los elementos fuera de su diagonal principal son 0. Toda matriz diagonal es triangulas superior y triangular inferior.
+
+La \textbf{identidad} es una matriz diagonal con todas las entradas en su diagonal a 1.
+
+Una \textbf{matriz nula} es una matriz con todas sus entradas a 0. También es una matriz diagonal a 0.
+
+Una \textbf{fila/columna nula} es aquella que tiene todas sus entradas a 0.
+
+Una \textbf{submatriz} de $A$ se obtiene eliminando de $A$ algunas filas o columnas.
+
+\section{Operaciones}
+
+\subsection{Suma de matrices y producto por un escala}
+\[
+[A+B]_{ij} = a_ij + b_ij
+\]
+\[
+A+B=\begin{pmatrix}
+a_{11} + b_{11} & a_{12} + b_{12} & \cdots & a_{1n} + b_{1n} \\
+a_{21} + b_{21} & a_{22} + b_{22} & \cdots & a_{2n} + b_{2n} \\
+\vdots & \vdots & \ddots & \vdots  \\
+a_{n1} + b_{n1} & a_{n2} + b_{n2} & \cdots & a_{nn} + b_{nn} \\
+\end{pmatrix}
+\]
+
+\[
+[\lambda A]_{ij}=\lambda a_{ij}
+\]
+\[
+\lambda A = \begin{pmatrix}
+\lambda a_{11} & \lambda a_{12} & \cdots & \lambda a_{1n}  \\
+\lambda a_{21} & \lambda a_{22} & \cdots & \lambda a_{2n}  \\
+\vdots & \vdots & \ddots & \vdots  \\
+\lambda a_{n1} & \lambda a_{n2} & \cdots & \lambda a_{nn}  \\
+\end{pmatrix}
+\]
+
+[Leyes de la suma de matrices y producto por un escalar]
+
+La suma de matrices y el producto por un escalar cumple:
+\begin{enumerate}
+	\item Asociativa: $A+B+C=(A+B)+C=A+(B+C)$
+	\item Conmutativa: A+B=B+A
+	\item Neutro: A + 0 = A
+	\item Inverso: A + (-A) = 0
+	\item Distributiva respecto a la suma de matrices: $\alpha (A+B) = \alpha A + \alpha B$
+	\item Distributiva respecto a la suma de escalares: $(\alpha\beta)A = \alpha(\beta A)$
+	\item Unidad del cuerpo: $1A = A$
+\end{enumerate}
+
+
+\subsection{Producto de matrices}
+
+El producto de matrices tiene sentido si el número de columnas de $A$ coincide con el número de filas de $B$.
+\[
+[AB]_{ij} = \sum_{k=1}^{n}{a_{ik}b_{kj}}
+\]
+
+[Leyes del producto de matrices]
+\begin{enumerate}
+	\item Asociativa: A(BC)=(AB)C
+	\item Elemento neutro por la derecha: $AI_n = A$
+	\item Elemento neutro por la izquierda: $I_nA=A$
+	\item Asociativa respecto al producto de escalares: $\alpha(AB)=(\alpha A)B=A(\alpha B)$
+	\item Distributiva respecto a la suma de matrices por la derecha: A(B+C)=AB+AC
+	\item Distributiva respecto a la suma de matrices por la izquierda: (A+B)C=AC+BC
+\end{enumerate}
+
+
+Se puede observar que el producto de matrices no cumple la propiedad conmutativa.
+
+\subsubsection{Producto de matrices por bloques}
+
+\[
+A=\left(\begin{array}{c|c|c|c}
+A_{11} & A_{12} & \cdots & A_{1n}  \\
+\hline
+A_{21} & A_{22} & \cdots & A_{2n}  \\
+\hline
+\vdots & \vdots & \ddots & \vdots  \\
+\hline
+A_{n1} & A_{n2} & \cdots & A_{nn}  \\
+\end{array}\right)
+B=\left(\begin{array}{c|c|c|c}
+B_{11} & B_{12} & \cdots & B_{1n}  \\
+\hline
+B_{21} & B_{22} & \cdots & B_{2n}  \\
+\hline
+\vdots & \vdots & \ddots & \vdots  \\
+\hline
+B_{n1} & B_{n2} & \cdots & B_{nn}  \\
+\end{array}\right)
+\]
+
+\[
+(A_{i1} \cdots A_{in})
+\left(\begin{array}{c}
+B_{1j} \\ \vdots \\ B_{nj}
+\end{array}\right) = A_{i1}B_{1j} \cdots A_{in}B_{1n}
+\]
+
+\subsection{Propiedades de la transpuesta}
+
+[Propiedades de la transpuesta]
+  Si la suma o el producto de matrices tiene sentido en cada uno de los casos que enumeramos a continuación, se cumple que:
+  \begin{enumerate}
+   \item $(A+B)^t=A^t+B^t$
+   \item $(A_1^+\ldots+A_n)^t=A_1^t+\ldots+A_n^t$
+   \item $(\alpha A)^t=\alpha A^t, \forall \alpha in \mathbb{K}$
+   \item $(AB)^t=B^tA^t$
+   \item $(A_1\ldots A_n)^t = A_n^t \ldots A_1^t$
+\end{enumerate}
+
+
+
+ Si $A$ es una matriz cuadrada entonces:
+ \begin{enumerate}
+  \item $A+A^t$ es simétrica y $A-A^t$ es antisimétrica.
+  \item $A$ se puede escribir como la suma de una matriz simétrica y una antisimétrica.
+  \item $AA^t$ es simétrica.
+ \end{enumerate}
+
+
+\section{Método de Gauss}
+
+\subsection{Combinación lineal de filas de una matriz}
+
+Una \textbf{combinación lineal} de matrices fila $F_1,\ldots,F_k$ del mismo tamaño es una expresión
+\[
+ \alpha_1 F_1 + \cdots + \alpha_k F_k, \alpha_i,\cdots,\alpha_k \in \mathbb{K}
+\]
+
+Las matrices fila $F_1,\ldots,F_k$ son \textbf{dependientes} si existe alguna que es combinación lineal de las demas. 
+En caso contrario, las matrices fila $F_1,\ldots,F_k$ son \textbf{independientes}.
+
+
+ Sean $F_1,\ldots,F_k$ matrices fila del mismo tamaño, entonces $F_1,\ldots,F_k$ son dependientes si y sólo si existe
+ una combinación lineal que no es trivial de la forma
+\[
+ \alpha_1 F_1 + \cdots + \alpha_k F_k = 0
+\] 
+
+
+\subsection{Operaciones elementales de filas. Matrices elementales}
+
+Las transformaciones que se pueden aplicar a una matriz en el conocido método de Gauss se denominan \textbf{operaciones elementales 
+de filas}. Son de 3 tipos y consisten en lo siguiente:
+\begin{description}
+ \item[Tipo I] Intercambiar 2 filas. Se denota $f_i \leftrightarrow f_j$.
+ \item[Tipo II] Suma a una fila otra multiplicada por un escalar. Se denota 
+$f_i \leftrightarrow f_i + \alpha f_j, \alpha \in \mathbb{K}$.
+ \item[Tipo III] Multiplicar una fila por un escalar no nulo. Se denota $f_i  
+\leftrightarrow \alpha f_i, \alpha \in \mathbb{K}$.
+\end{description}
+
+\subsubsection{Matrices elementales}
+
+Una \textbf{matriz elemental} de orden $n$ es la matriz resultante de aplicar a 
+la matriz identidad $I_n$ una operación elemental de filas. Las hay de 3 tipos:
+\begin{itemize}
+ \item $E_{f_i \leftrightarrow f_j}$ Matriz resultante de aplicar a $I_n$ la 
+operación elemental $f_i \leftrightarrow f_j$.
+\[
+ I_n \underset{f_i \leftrightarrow f_j}{\longrightarrow} E_{f_i \leftrightarrow 
+f_j}
+\]
+ \item $E_{f_i \leftrightarrow f_i + \alpha f_j}$ Matriz resultante de aplicar 
+a $I_n$ la operación elemental $f_i \leftrightarrow f_i + \alpha f_j$.
+\[
+ I_n \underset{f_i \leftrightarrow f_i + \alpha f_j}{\longrightarrow} E_{f_i 
+\leftrightarrow f_i + \alpha f_j}
+\]
+ \item $E_{f_i \leftrightarrow \alpha f_i}$ Matriz resultante de aplicar 
+a $I_n$ la operación elemental $f_i \leftrightarrow \alpha f_i$.
+\[
+ I_n \underset{f_i \leftrightarrow \alpha f_i}{\longrightarrow} E_{f_i 
+\leftrightarrow \alpha f_i}
+\]
+\end{itemize}
+
+\subsubsection{Matrices escalonadas y escalonadas reducidas}
+
+El primer elemento no nulo de cada fila se denomina \textbf{pivote}. Si la fila 
+es nula no tiene pivote.
+
+La matriz $A$ es \textbf{escalonada} si cumple las siguientes propiedades:
+\begin{itemize}
+ \item Si $A$ tiene $k$ filas nulas, estas son las últimas $k$ filas.
+ \item Todo pivote de $A$ tiene más ceros a la izquierda que su fila 
+inmediatamente superior. Esto no afecta a la primera fila.
+\end{itemize}
+
+La matriz $A$ es \textbf{escalonada reducida} si es escalonada y cumple:
+\begin{itemize}
+ \item Todo pivote tiene valor 1.
+ \item Todo entrada de $A$ situado en la misma columna que un pivote es 0.
+\end{itemize}
+
+\subsubsection{Matrices equivalentes por filas}
+
+Dos matrices $A$ y $B$ son equivalentes por filas $A \sim_f B$ si existe una sucesión finíta de operaciones elementales por filas, o si existe una serie de matrices elementales por filas $E_1,\ldots,E_k$, tal que $B=E_k\cdots E_1 A$.
+
+
+La equivalencia por filas es una relación de equivalencia.
+
+
+
+Si $A \sim_f B$ entonces toda fila de $B$ es combinación lineal de las filas de $A$.
+
+
+\subsubsection{Equivalencia por filas a una matriz escalonada}
+
+
+Toda matriz es equivalente a una matriz escalonada. 
+
+
+Pero esta no es única, es decir, puede ser equivalente a varias matrices escalonadas distintas.
+
+El \textbf{método de Gauss} consiste en aplicar de solo operaciones elementales de \textbf{Tipo I} y \textbf{Tipo II}.
+
+\subsubsection{Equivalencia por filas a una matriz escalonada reducida}
+
+
+Toda matriz es equivalente a una matriz escalonada reducida.
+
+
+El \textbf{método de Gauss-Jordan} añade el uso de la operación elemental de \textbf{Tipo III} para hacer que los pivotes sean 1.
+
+
+Si $A$ y $B$ son matrices escalonadas reducidas y $A \sim_f B$ entonces $A=B$
+
+
+
+Toda matriz es equivalente a una única matriz escalonada.
+
+
+La \textbf{forma de Hermite por filas} o \textbf{forma escalonada reducida} de A es la única matriz escalonada reducida equivalente por filas de A. Se denota como $H_f(A)$
+
+
+Dos matrices $A$ y $B$ son equivalentes por filas si y sólo si $H_f(A)=H_f(B)$
+
+
+\subsection{Operaciones elementales por columnas. Matrices elementales por columnas}
+
+Las transformaciones que se pueden aplicar a una matriz en el conocido método de Gauss se denominan \textbf{operaciones elementales 
+de columnas}. Son de 3 tipos y consisten en lo siguiente:
+\begin{description}
+ \item[Tipo I] Intercambiar 2 columnas. Se denota $c_i \leftrightarrow c_j$.
+ \item[Tipo II] Suma a una columna otra multiplicada por un escalar. Se denota $c_i \leftrightarrow c_i + \alpha c_j, \alpha \in \mathbb{K}$.
+ \item[Tipo III] Multiplicar una columna por un escalar no nulo. Se denota $c_i  \leftrightarrow \alpha c_i, \alpha \in \mathbb{K}$.
+\end{description}
+
+\subsubsection{Matrices equivalentes por columnas}
+
+Dos matrices $A$ y $B$ son equivalentes por columnas $A \sim_c B$ si existe una sucesión finita de operaciones elementales por columnas, o si existe una serie de matrices elementales por columnas $F_1,\ldots,F_k$, tal que $B=A F_1\cdots F_k$.
+
+
+La equivalencia por columnas es una relación de equivalencia.
+
+
+\subsection{Matrices equivalentes}
+
+Dos matrices $A$ y $B$ son \textbf{equivalentes}, si se puede transformar $A$ en $B$ mediante una sucesión finita de operación elementales por columnas o filas. Equivalentemente, si existe matrices elementales por filas $E_1,\ldots,E_k$ o por columnas $F_1,\ldots,F_j$ tales que $B=E_1 \cdots E_k A F_1 \cdots F_j$.
+
+
+La equivalencia de matrices es una relación de equivalencia.
+
+
+\section{Rango de una matriz}
+
+El rango de una matriz $A$, $rg(A)$, es el máximo número de filas independientes de $A$.
+
+
+El rango de una matriz escalonada es el número de filas no nulas que tenga.
+
+
+El rango de una matriz es invariante con respecto a las operaciones elementales.
+
+
+Dos matrices equivalentes por filas tienen igual rango.
+
+
+
+El rango de una matriz es el número de filas no nulas de cualquier matriz equivalente por filas.
+
+
+
+Sea $A$ una matriz de orden $n$. Son equivalentes las siguientes afirmaciones:
+\begin{enumerate}
+\item $rg(A)=n$.
+\item $A \sim_f I_n$.
+\item $A$ es un producto de matrices elementales de orden $n$.
+\end{enumerate}
+
+
+\subsection{Matrices equivalentes y rango}
+
+
+Sea $H_r = \begin{pmatrix} I_r & 0 \\ 0 & 0 \end{pmatrix}$ y $H_s = \begin{pmatrix} I_s & 0 \\ 0 & 0 \end{pmatrix}$ de igual tamaño. Entonces $H_r \sim_f H_s$ si y sólo si $r=s$.
+
+
+
+Sea $A$ y $H_r = \begin{pmatrix}
+I_r & 0 \\
+0 & 0 \\
+\end{pmatrix}$ de igual tamaño. Entonces $A \sim_f H_r$ si y sólo si $rg(A)=r$.
+
+
+
+Dos matrices son equivalentes si y solo tienen igual rango.
+
+
+\subsection{Rango de una matriz traspuesta}
+
+
+Sean $A$ y $B$ dos matrices de tamaño $m \times n$. Son ciertas las afirmaciones:
+\begin{itemize}
+\item $A \sim B$ si y sólo si $A^t \sim B^t$.
+\item Si $A$ es cuadrada $A \sim A^t$.
+\item $rg(A) = rg(A^t)$.
+\item Si $A$ tiene tamaño $m \times n$ entonces $rg(A) \leq \min\{m,n\}$.
+\end{itemize}
+
+
+\subsection{Rango de la suma y del producto de matrices}
+
+
+Sean $A, B \in \mathfrak{M}_{m \times n}(\mathbb{K})$ y $D \in \mathfrak{M}_{n \times p}(\mathbb{K})$. Son ciertas las siguientes afirmaciones:
+\begin{itemize}
+\item $|rg(A)-rg(B)| \leq rg(A+B) \leq rg(A) + rg(B)$.
+\item $rg(A) = rg(\alpha A), \forall \alpha \in \mathbb{K}, \alpha \neq 0$.
+\item $rg(AD) \leq \min\{rg(A),rg(D)\}$.
+\item Si $C \in \mathfrak{M}_n(\mathbb{K})$ y $rg(C)=n$ entonces $rg(AC)=rg(A)$.
+\item Si $C \in \mathfrak{M}_n(\mathbb{K})$ y $rg(C)=n$ entonces $rg(CD)=rg(D)$.
+\end{itemize}
+
+
+\section{Inversa de una matriz cuadrada}
+
+La matriz $A$ de orden $n$ es \textbf{invertible} o \textbf{regular} si existe una matriz de orden $n$, que se llama \textbf{matriz inversa} de $A$ y se denota por $A^{-1}$, tal que:
+\begin{align*}
+AA^{-1}=A^{-1}A=I_n
+\end{align*}
+Y la matriz $A$ es \textbf{singular} si no tiene inversa.
+
+
+Una matriz invertible tiene una \textbf{única inversa}.
+
+
+
+La matriz inversa de cada tipo de matriz elemental viene dada por:
+\begin{align*}
+E^{-1}_{f_i \leftrightarrow f_j} &= E_{f_j \leftrightarrow f_i} \\
+E^{-1}_{f_i \leftrightarrow f_i + \alpha f_j} &= E_{f_i \leftrightarrow f_i - \alpha f_j} \\
+E^{-1}_{f_i \leftrightarrow \alpha f_i} &= E_{f_i \leftrightarrow \frac{1}{\alpha} f_i}
+\end{align*}
+
+Sean $A,B,A_1,\ldots,A_k$ matrices invertibles de orden $n$. Son ciertas las afirmaciones:
+\begin{enumerate}
+\item $(A^t)^{-1}=(A^{-1})^t$.
+\item $(AB)^{-1}=B^{-1}A^{-1}$.
+\item $(A_1 \cdots A_k)^{-1}=A_k^{-1} \cdots A_1^{-1}$
+\end{enumerate}
+
+\subsection{Caracterización de matrices invertibles}
+
+Sea $A$ una matriz de orden $n$. Son ciertas las siguientes afirmaciones:
+\begin{enumerate}
+\item $A$ tiene inversa.
+\item $BA = CA \Rightarrow B=C$.
+\item $BA = 0 \Rightarrow B=0$.
+\item $rg(A)=n$.
+\item $H_f(A)=I_n$ y $H_c(A)=I_n$.
+\item $A$ es un producto de matrices elementales. $A=E_1 \cdots E_k$.
+\end{enumerate}
+
+Sean $A$ y $B$ matrices de orden $n$. Son ciertas las afirmaciones:
+\begin{enumerate}
+\item $AB=I_n \Rightarrow B=A^{-1}$
+\item $BA=I_n \Rightarrow B=A^{-1}$
+\end{enumerate}
+
+Sean $A$ y $B$ dos matrices del mismo tamaño. Son ciertas las afirmaciones:
+\begin{enumerate}
+\item $A \sim_f B$ si y sólo si existe una matriz invertible $P$ tal que $PA=B$.
+\item $A \sim_c B$ si y sólo si existe una matriz invertible $Q$ tal que $AQ=B$.
+\item $A \sim B$ si y sólo si existen matrices invertibles $P$ y $Q$ tal que $PAQ=B$.
+\end{enumerate}
+
+Sea $A$ una matriz de tamaño $m \times n$.
+\begin{itemize}
+\item Una \textbf{inversa por la izquierda} de $A$ es una matriz $X$ de tamaño $n \times m$ tal que $XA=I_n$.
+\item Una \textbf{inversa por la derecha} de $A$ es una matriz $Y$ de tamaño $n \times m$ tal que $XA=I_m$.
+\end{itemize}
+
+Una matriz $A$ de tamaño $m \times n$ tiene:
+\begin{itemize}
+\item Inversa por la izquierda si y sólo si $rg(A) = n$.
+\item Inversa por la derecha si y sólo si $rg(A) = m$.
+\end{itemize}
+
+Si $rg(A)=n=m$ entonces la inversa de $A$ coincide con la única inversa de $A$ por la izquierda y la única inversa de $A$ por la derecha.
+
+\section{Determinante de una matriz cuadrada}
+
+Sea $A \in \mathfrak{M}_n(\mathbb{K})$. Se denota por $A_{ij}$ a la submatriz de $A$ de orden $n-1$ que se obtiene eliminando la fila $i$ y la columna $j$ de A.
+
+Llamaremos \textbf{menor adjunto}, $\alpha_{ij}$, del elemento $a_{ij}$ de $A$ al escalar:
+\[
+\alpha_{ij} = (-1)^{i+j}det(A_{ij})
+\]
+
+Si $n=1$ y $A=(a)$ entonces $det(A)=a$.
+
+Si $n>1$ entonces $det(A)$ viene determinado por la formula de Laplace por la fila $i$ o columna $j$:
+\begin{align*}
+det(A) = \sum_{i=1}^{n} a_{ij}\alpha_{ij} & det(A) = \sum_{j=1}^{n} a_{ij}\alpha_{ij}
+\end{align*}
+
+Si $A$ es una matriz de orden $n$ triangular superior/inferior el determinante de $A$ es el producto de los $n$ elementos de su diagonal principal, es decir:
+\[
+det(A)=a_{11}a_{22} \cdots a_{nn}
+\]
+
+\subsection{¿Cómo afecta las operaciones elementales al determinante?}
+\begin{align*}
+A \xrightarrow[f_k \leftrightarrow f_h]{} B &\Rightarrow \det(B) = -\det(A) \\
+A \xrightarrow[f_k \leftrightarrow t f_h]{} B &\Rightarrow \det(B) = t \det(A) \\
+A \xrightarrow[f_k \leftrightarrow f_k + t f_h]{} B &\Rightarrow \det(B) = \det(A)
+\end{align*}
+
+El $\det(A)=0$ si:
+\begin{itemize}
+\item Si $A$ tiene 2 filas iguales.
+\item Si $A$ tiene una fila nula.
+\end{itemize}
+
+Sean $A, B, C$ tres matrices que se diferencias únicamente en su fila $j$, en concreto la fila $j$ de $A$ es igual a la suma de las filas $j$ de $B$ y $C$. Entonces $\det(A)=\det(B)+\det(C)$.
+
+El determinantes de las matrices elementales viene dado por:
+\begin{enumerate}
+\item $\det(E_{f_k \leftrightarrow f_h}) = -1$.
+\item $\det(E_{f_k \leftrightarrow f_k + t f_h}) = 1$.
+\item $\det(E_{f_k \leftrightarrow t f_k}) = 1$.
+\end{enumerate}
+
+Si $A \in \mathfrak{M}_n(\mathbb{K})$ y $E$ es una matriz elemental de orden $n$ entonces:
+\[
+\det(EA)=\det(E)\det(A)
+\]
+
+Sean $A$ y $B$ dos matrices de orden $n$. Son ciertas las afirmaciones:
+\begin{enumerate}
+\item $\det(A) \neq 0$ si y sólo si $A$ es invertible.
+\item $\det(AB) = \det(A)\det(B)$.
+\item $\det(A)= \det(A^t)$.
+\end{enumerate}
+
+\subsection{Determinante de una matriz triangular por bloques}
+
+Si $A$ es una matriz de orden $n$ y $B$ es una matriz de orden $m$ entonces:
+\[
+\det\begin{pmatrix}
+A & C \\
+0 & B
+\end{pmatrix} = \det(A) \det(B)
+\]
+
+Si $A$ es una matriz de orden $n$ triangular superior/inferior por bloques tal que las matrices $A_1,A_2,\ldots,A_n$ situadas en diagonal principal son cuadradas, entonces:
+\[
+\det(A)=\det(A_1)\det(A_2)\cdots\det(A_n)
+\]
+
+\subsection{Calculo de la inversa usando el determinante}
+
+Se llama \textbf{matriz adjunta} de $A$, $Adj(A)$, a la matriz:
+\[
+Adj(A)=(\alpha_{ij})
+\]
+\[
+Adj(A)^t A = \det(A) I_n
+\]
+
+\subsection{Menores y rango}
+
+Un \textbf{menor de orden} $p$ de una matriz $A$ es el determinante de una submatriz $A$ de orden $p$. Si $A$ es cuadrada, de orden $n$, el \textbf{menor principal} de orden $k$ para $k=1,\ldots,n$ es:
+\[
+\vartriangle_k=\det\begin{pmatrix}
+a_{11} & \cdots & a_{1k} \\
+\vdots & \cdots & \vdots \\
+a_{k1} & \cdots & a_{kk} \\
+\end{pmatrix}
+\]
+
+El rango de $A$ es mayor o igual que el rango de una submatriz de $A$.
+
+Sea $A$ una matriz de tamaño $m \times n$ y $P$ una submatriz de $A$ de orden $m-1$ y rango $m-1$. Si $rg(A)=m$ entonces $A$ tiene una submatriz de orden $m$ y rango $m$ que contiene a $P$.
+
+Sea $A$ una matriz de tamaño $m \times n$ y $P$ una submatriz de $A$ de orden $p-1$ y rango $p-1$. Si $rg(A) \geq p$ entonces $A$ tiene una submatriz de orden $p$ y rango $p$ que contiene a $P$.
+
+El rango de $A$ es igual al mayor orden de un menor no nulo de $A$.

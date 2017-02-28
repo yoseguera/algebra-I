@@ -1,0 +1,19 @@
+\chapter{Espacios vectoriales}
+
+\section{Definición de espacio vectorial}
+
+Un conjunto $V$ no vacío es un espacio vectorial sobre un cuerpo $\mathbb{K}$ sí:
+\begin{itemize}
+\item En $V$ está definida una operación interna (suma):
+\begin{align*}
++ : &V \times V \rightarrow V \\
+&(u,v) \rightarrow u +v
+\end{align*}
+tal que $(V,+)$ es un \textbf{grupo abeliano}. Esto es. se cumplen las siguientes propiedades:
+\begin{itemize}
+\item \textbf{Conmutativa}: $\forall u,v \in V, u+v=v+u$.
+\item \textbf{Asociativa}: $\forall u,v,w, u+(v+w)=(u+v)+w$.
+\item Existe \textbf{elemento neutro}: $\exists 0 \in V, \forall u \in V;u+0=u$.
+\item Existe \textbf{elemento opuesto}: $\forall u \in V, \exists -u \in V; u+(-u)=0$.
+\end{itemize}	
+\end{itemize}

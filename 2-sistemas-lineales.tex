@@ -1,0 +1,72 @@
+\chapter{Sistemas lineales}
+
+Dos sistemas lineales son \textbf{equivalentes} si coinciden en su solución general.
+
+Para $\alpha \in \mathbb{K}, \alpha \neq 0$ son equivalentes los sistemas lineales:
+\begin{align*}
+\mathcal{A} \equiv \{ a_{11}x_1 + \cdots + a_{1n}x_n = b_1 \\
+\mathcal{A'} \equiv \{ \alpha a_{11}x_1 + \cdots + \alpha  a_{1n}x_n = \alpha b_i
+\end{align*}
+
+Para $\alpha \in \mathbb{K}, \alpha \neq 0$ son equivalentes los sistemas lineales:
+
+\begin{align*}
+\mathcal{A} \equiv & \begin{cases}
+a_{11}x_1 + \cdots + a_{1n}x_n = b_1 \\
+a_{21}x_1 + \cdots + a_{2n}x_n = b_2 
+\end{cases} \\
+\mathcal{A'} \equiv & \begin{cases}
+a_{11}x_1 + \cdots + a_{1n}x_n = b_1 \\
+(a_{21} + \alpha a_{11})x_1 + \cdots + (a_{2n} + \alpha a_{1n})x_n = b_2 
+\end{cases} \\
+\end{align*}
+
+Dos sistemas lineales con matrices ampliadas equivalentes por filas son sistemas equivalentes.
+
+\section{Discusión y resolución de sistemas lineales}
+
+Un sistema lineal $\mathcal{A}$ se caracteriza por el número de soluciones:
+\begin{itemize}
+\item $\mathcal{A}$ es \textbf{incompatible} si no tiene solución.
+\item $\mathcal{A}$ es \textbf{compatible determinado} si tiene una única solución.
+\item $\mathcal{A}$ es \textbf{compatible indeterminado} si tiene infinitas soluciones.
+\end{itemize}
+
+\textbf{Resolver} $\mathcal{A}$ es encontrar la solución general, y \textbf{discutir} $\mathcal{A}$ es determinar si es incompatible, compatible determinado o indeterminado.
+
+En un \textbf{sistema escalonado}:
+\begin{itemize}
+\item Si aparece $b=0$ con $b \neq 0$ entonces es incompatible.
+\item Si aparece $0=0$, una fila nula, se puede eliminar.
+\end{itemize}
+
+\subsection{Discusión de sistemas lineales}
+
+Sea $\mathcal{A}$ un sistema lineal escalonado con $n$ incógnitas y sea $(A|B)$ su matriz ampliada.
+\begin{enumerate}
+\item Si $(A|B)$ tiene un pivote en su última columna entonces $\mathcal{A}$ es incompatible.
+\item Si $(A|B)$ no tiene pivote en la última columna:
+\begin{enumerate}
+\item $(A|B)$ tiene $n$ entonces es compatible determinado.
+\item $(A|B)$ tiene menos $n$ entonces es compatible indeterminado.
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Teorema de Rouche-Fröbenius}
+
+Sea $\mathcal{A}$ un sistema lineal con $n$ incógnitas y sea $(A|B)$ su matriz ampliada:
+\begin{enumerate}
+\item $\mathcal{A}$ es incompatible si y sólo si $rg(A) < rg(A|B)$.
+\item $\mathcal{A}$ es compatible determinado si y sólo si $rg(A) = rg(A|B) = n$.
+\item $\mathcal{A}$ es compatible indeterminado si y sólo si $rg(A) = rg(A|B) < n$.
+\end{enumerate}
+
+Un sistema lineal $AX=B$ con $A$ de orden $n$ tiene solución única si y sólo si $A$ es invertible.
+
+\subsection{Regla de Cramer}
+
+La única solución de un sistema regular de orden $n$ $AX=B$ viene dada por:
+\[
+x_1=\frac{\vartriangle_1}{det(A)}, x_2=\frac{\vartriangle_2}{det(A)}, \ldots, x_n=\frac{\vartriangle_n}{det(A)}
+\]
+donde $\vartriangle_i$ es el determinante de la matriz que se obtiene cambiando la columna $i$ de $A$ por $B$.

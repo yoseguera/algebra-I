@@ -1,0 +1,341 @@
+\chapter{Espacios vectoriales}
+
+\section{Definición de espacio vectorial}
+
+Un conjunto $V$ no vacío es un espacio vectorial sobre un cuerpo $\mathbb{K}$ sí:
+\begin{itemize}
+\item En $V$ está definida una operación interna (suma):
+\begin{align*}
++ : &V \times V \rightarrow V \\
+&(u,v) \rightarrow u +v
+\end{align*}
+tal que $(V,+)$ es un \textbf{grupo abeliano}. Esto es. se cumplen las siguientes propiedades:
+\begin{enumerate}
+\item \textbf{Conmutativa}: $\forall u,v \in V; u+v=v+u$.
+\item \textbf{Asociativa}: $\forall u,v,w; u+(v+w)=(u+v)+w$.
+\item Existe \textbf{elemento neutro}: $\exists 0 \in V, \forall u \in V;u+0=u$.
+\item Existe \textbf{elemento opuesto}: $\forall u \in V, \exists -u \in V; u+(-u)=0$.
+\end{enumerate}
+
+\item En $V$ esta definida una \textbf{operación externa (producto de escalares)}
+\begin{align*}
+\cdot : &\mathbb{K} \times V \rightarrow V \\
+&(\alpha,v) \rightarrow \alpha\cdot v
+\end{align*}
+que cumple las siguientes propiedades:
+\begin{enumerate}
+	\item \textbf{Asociativa}: $\forall \alpha,\beta \in \mathbb{K},\forall u \in V; \alpha \cdot (\beta \cdot u)=(\alpha \cdot \beta) \cdot u$.
+	\item El elemento $1 \in \mathbb{K}, 1 \cdot u = u, \forall u \in V$.
+	\item \textbf{Distributiva} del producto respecto de la suma en $V$:
+	\[
+	\alpha (u + v) = \alpha u + \alpha v, \forall \alpha \in \mathbb{K}, \forall u,v \in V
+	\]
+	\item \textbf{Distributiva} del producto respecto de la suma de escalares:
+	\[
+	(\alpha + \beta)u = \alpha u + \beta u, \forall \alpha,\beta \in \mathbb{K}, \forall u \in V
+	\]
+\end{enumerate}
+\end{itemize}
+
+\begin{prop}[Leyes de la suma de vectores y producto de escalares]
+	Sean $V$ un $\mathbb{K}$-espacio vectorial, $u,v,w \in V$ y $\alpha,\beta \in \mathbb{K}$. Son ciertas las afirmaciones:
+	\begin{enumerate}
+		\item $\alpha\textbf{0}=\textbf{0}$.
+		\item $0u=\textbf{0}$.
+		\item $\alpha u = 0 \Leftrightarrow \alpha = 0 \vee \beta = 0$.
+		\item $u+v=u+w \Leftrightarrow v=w$.
+		\item $\alpha u = \beta u \vee u \neq \textbf{0} \Leftrightarrow \alpha = \beta$.
+		\item $\alpha u = \alpha v \vee \alpha \neq 0 \Leftrightarrow \alpha = \alpha$.
+		\item $(-\alpha)u=-\alpha u = \alpha(-u)$.		
+	\end{enumerate}
+\end{prop}
+
+\section{Dependencia e independencia lineal}
+
+\begin{defi}
+	Los vectores $v_1,\cdots,v_n$ del $\mathbb{K}$-espacio vectorial $V$ son:
+	\begin{description}
+		\item[Linealmente dependientes] Si alguno de ellos es combinación lineal de los demás.
+		\item[Linealmente independientes] Si ninguno de ellos es combinación lineal de los demás.		
+	\end{description}
+\end{defi}
+
+\begin{prop}
+	Sea $V$ un $\mathbb{K}$-espacio vectorial. Son ciertas las afirmaciones:
+	\begin{enumerate}
+	\item Si $0 \in {v_1,\cdots,v_n}$ entonces $v_1,\cdots,v_n$ son linealmente dependientes.
+	\item $v_1,\cdots,v_n$ son linealmente dependientes si y sólo si existen escalares $\alpha_1,\cdots,\alpha_n$, no todos iguales a 0, para los que se cumple que $\alpha_1 v_i + \cdots + \alpha_n v_n = 0$.
+	\item $v_1,\cdots,v_n$ son linealmente independientes si y sólo si los únicos escalares $\alpha_1,\cdots,\alpha_n$ para los que se cumple $\alpha_1 v_i + \cdots + \alpha_n v_n = 0$ son $\alpha_1=\cdots=\alpha_n=0$.
+	\end{enumerate}
+\end{prop}
+
+\begin{prop}
+	Si $v_1,\ldots,v_n$ son vectores linealmente independientes en $V$ y $v_{n+1}$ es un vector, que no es combinación lineal de los anteriores, entonces Si $v_1,\ldots,v_n,v_{n+1}$ son linealmente independientes.
+\end{prop}
+
+\section{Sistemas generadores}
+
+\begin{defi}
+	Un \textbf{sistema generador} de un espacio vectorial $V$ es un conjunto $S$ de vectores de $V$ tales que todo vector de $V$ es combinación lineal de los de $S$. El espacio $V$ es de \textbf{dimensión finita} si existe un sistema generador de $V$ con un número finito de vectores.
+\end{defi}
+
+\begin{prop}
+	Si ${v_1,\ldots,v_n}$ es un sistema generador de $V$ y $v_n$ es combinación lineal de $v_1,\ldots,v_{n-1}$ es un sistema generador de $V$.
+\end{prop}
+
+\begin{prop}
+	Sea $V$ un espacio vectorial. Si ${v_1,\ldots,v_r}$ son vectores linealmente independientes de $V$ y ${w_1,\ldots,w_s}$ es un sistema generador de $V$, entonces $r \leq s$.
+\end{prop}
+
+\section{Bases}
+
+\begin{defi}
+	Una \textbf{base} de un espacio vectorial $V$ es un conjunto ordenado
+	\[
+	\mathcal{B}={v_1,\ldots,v_n}
+	\]
+	de vectores linealmente independientes que forman un sistema generador de $V$.
+\end{defi}
+
+\begin{theorem}
+	Todas las bases de un espacio vectorial finito $V$ tienen igual número de vectores.
+\end{theorem}
+
+La \textbf{dimensión} de $V$, $dim(V)$, es el número de vectores de cualquier base de $V$.
+
+
+\begin{prop}
+Sea $V$ un espacio vectorial de dimensión $n$. Son ciertas las afirmaciones:
+\begin{enumerate}
+	\item Un sistema generador de $V$ tiene como mínimo $n$ vectores.
+	\item un conjunto de vectores linealmente independientes de $V$ tiene como máximo $n$ vectores.
+	\item Todo sistema generador de $V$ de $n$ vectores es una base de $V$.
+	\item Todo conjunto de $n$ vectores linealmente independientes de $V$ es una base de $V$.
+\end{enumerate}
+\end{prop}
+
+\begin{theorem}
+	Sea ${v_1,\ldots,v_n}$ un sistema genrador de un espacio vectorial $V$ de dimensión $d$. Si $d>n$ entonces se pueden eliminar $d-n$ vectores de ${v_1,\ldots,v_n}$ y quedarnos con una base de $V$.
+\end{theorem}
+
+\begin{theorem}[Teorema de ampliación de la base]
+	Sea ${v_1,\ldots,v_n}$ un sistema genrador de un espacio vectorial $V$ de dimensión $d$. Si $n<d$ entonces se pueden añadir $d-n$ vectores ${v_{n+1},\ldots,v_d}$ y tales que ${v_1,\ldots,v_n,v_{n+1},\ldots,v_d}$ es una base de $V$.
+\end{theorem}
+
+\subsection{Coordenadas de un vector respecto de una base}
+
+\begin{theorem}
+	El conjunto de vectores ${v_{1},\ldots,v_n}$ es una base de $V$ si y sólo si cada vector de $V$ se puede escribir de forma única como una combinación lineal de ${v_{1},\ldots,v_n}$
+\end{theorem}
+
+\begin{defi}
+	Sea $\mathcal{B}={v_{1},\ldots,v_n}$ una base de un $\mathbb{K}$-espacio vectorial y $v$ un vector de $V$. Decimos que ${\alpha_{1},\ldots,\alpha_n}$ son las \textbf{coordenadas de $v$ respecto de $\mathcal{B}$} si $\alpha_{1},\ldots,\alpha_n$ son los únicos escalares tales que:
+	\[
+	v = \alpha_{1}v_1+\cdots+v_n\alpha_n
+	\]
+	Para referirnos a al expresión anterior usaremos la notación $v=(\alpha_{1},\ldots,\alpha_n)_{\mathcal{B}}$.
+\end{defi}
+
+\section{Rango de un conjunto de vectores}
+
+\begin{defi}
+	El \textbf{rango de un conjunto de vectores} $\{v_1,\ldots,v_n\}$, $rg\{v_1,\ldots,v_n\}$ es el mayor número de vectores linealmente independientes que contiene.
+\end{defi}
+
+\begin{defi}
+	Dos \textbf{conjuntos de vectores} son \textbf{equivalentes} si podemos transformar uno en otro mediante operaciones elementales.
+\end{defi}
+
+\begin{prop}
+	Sea $\mathcal{B}$ una base de un espacio vectorial $V$ y sean $v_1,\ldots,v_n$ vectores de $V$. Se cumple que
+	\[
+	rg \lbrace v_1,\ldots,v_n \rbrace = rg\ \mathfrak{M}_{\mathcal{B}} \left\lbrace
+	\begin{array}{c}
+	v_1 \\ \vdots \\ v_n 
+	\end{array}
+	\right\rbrace =
+	rg\ \mathfrak{M}_{\mathcal{B}} \lbrace v_1, \ldots, v_n \rbrace
+	\]
+\end{prop}
+
+\section{Matriz de cambio de base}
+
+Si tenemos los vectores $\mathcal{B}=\lbrace v_1,\ldots,v_n \rbrace$ expresados respecto la base $\mathcal{B'}=\lbrace v'_1,\ldots,v'_n \rbrace$ 
+\[
+v_i = a_{i1}v'_1 + \ldots + a_{in}v'_n 
+\]
+la \textbf{matriz de cambio de base} sería
+\[
+\mathfrak{M}_{\mathcal{B}\mathcal{B'}} = \begin{pmatrix}
+a_{11} & \cdots & a_{1n} \\
+\vdots & \cdots & \vdots \\
+a_{n1} & \cdots & a_{nn} \\
+\end{pmatrix}
+\]
+
+\begin{prop}
+	Si $\mathcal{A},\mathcal{B},\mathcal{C}$ son 3 bases de un espacio vectorial entonces
+	\[
+	\mathfrak{M}_{\mathcal{A}\textbf{C}} = \mathfrak{M}_{\mathcal{B}\textbf{C}}\mathfrak{M}_{\mathcal{A}\textbf{B}}
+	\]
+\end{prop}
+
+\section{Subespacios vectoriales}
+
+\begin{defi}
+	Un subconjunto $U$ no vacío de un $\mathbb{K}$-espacio vectorial $V$ es un \textbf{subespacio vectorial} si para todo $u,v \in U$ y todo $\alpha \in \mathbb{K}$ se cumplen las propiedades:
+	\begin{enumerate}
+		\item $u+v \in U$.
+		\item $\alpha u \in U$.
+	\end{enumerate}
+	O, equivalentemente, si para cualquiera $u,v \in U$ y $\alpha,\beta \in \mathbb{K}$ se cumple la propiedad:
+	\[
+	\alpha u + \beta v \in U
+	\]	
+	
+	Un \textbf{subespacio vectorial} es un subconjunto no vacío de un espacio vectorial que contiene a todas las combinaciones lineales de sus vectores.
+\end{defi}
+
+\begin{defi}
+	El \textbf{subespacio vectorial generado por un conjunto} no vacio $S$ de $V$ es el conjunto
+	\[
+	L(S) = \lbrace \alpha_1 v_1 + \cdots + \alpha_n v_n: m \in \mathbb{N}, \alpha_i \in \mathbb{K}, v_i \in S\rbrace
+	\]
+\end{defi}
+
+\begin{prop}
+	Sea $S$ un conjunto no vacío de vectores de $V$. Son ciertas las afirmaciones:
+	\begin{enumerate}
+		\item $L(S)$ es el menor subespacio vectorial de $V$ que contiene a $S$.
+		\item Si $S$ es un subespacio vectorial de $V$ entonces $L(S)=S$.
+		\item Si $R$ es tal que $S \subseteq R \subseteq V$ entonces $L(S) \subseteq L(R) \subseteq L(V)$.
+	\end{enumerate}
+\end{prop}
+
+\begin{defi}
+	Un \textbf{sistema generador de un subespacio vectorial} $U$ de $V$ es un conjunto $\lbrace v_1,\ldots,v_n \rbrace$ de vectores de $U$ tal que $L(v_1,\ldots,v_n)=U$
+\end{defi}
+
+\begin{prop}
+	Sean $v_1,\ldots,v_n,w_1,\ldots,w_n$ vectores de un espacio vectorial. Si
+	\begin{align*}
+	\lbrace v_1,\ldots,v_n\rbrace \subset L(w_1,\ldots,w_n) \\
+	\lbrace w_1,\ldots,w_n\rbrace \subset L(v_1,\ldots,v_n) \\
+	\end{align*}
+	entonces
+	\[
+	L(v_1,\ldots,v_n)=L(w_1,\ldots,w_n)
+	\]
+\end{prop}
+
+\begin{theorem}
+	Si los conjuntos de vectores $R$ y $S$ son equivalentes entonces $L(R)=L(S)$.
+\end{theorem}
+
+\begin{theorem}
+	Si $U=L(v_1,\ldots,v_n)$ entonces $dim(U)=rg \lbrace v_1,\ldots,v_n \rbrace$
+\end{theorem}
+
+\subsection{Subespacios vectoriales $\mathbb{K}^n$ como solución del sistema $AX=0$}
+
+\begin{theorem}
+	Un subconjunto $U$ de $\mathbb{K}^n$ es un subespacio vectorial de $\mathbb{K}^n$ si y sólo si $U$ es el conjunto de soluciones de algún sistema lineal homogéneo.
+\end{theorem}
+
+\begin{theorem}
+	La solución general de un sistema lienal homogéneo $AX=0$ con $n$ incognitas y coeficientes en $\mathbb{K}$ es un subespacio vectorial de $\mathbb{K}^n$ de dimensión $n-rg(A)$.
+\end{theorem}
+
+\section{Intersección y suma de subespacios vectoriales}
+
+\begin{prop}
+	Si $V$ es un espacio vectorial de dimensión $n$ y $U$ un subespacio vectorial de $V$ de dimensión $k$, entonces $U$ es intersección de $n-k$ hiperplanos.
+\end{prop}
+
+\begin{defi}
+	La \textbf{suma} de los subespacios vectoriales $V_1,\ldots,V_n$ de $V$ es el menor subespacio vectorial que contiene a $V_1 \cup \ldots \cup V_n$, esto es,
+	\[
+	V_1,\ldots,V_n = L(V_1 \cup \ldots \cup V_n)
+	\]
+\end{defi}
+
+\begin{prop}
+	Si $V_1,\ldots,V_n$ son subespacios vectoriales de $V$ entonces
+	\[
+	V_1 + \cdots + V_n = \lbrace v_1 + \cdots + v_n: v_1 \in V_1,\ldots,v_n \in V_n\rbrace
+	\]
+\end{prop}
+
+\subsection{Suma directa de subespacios vectoriales}
+
+\begin{defi}
+	La suma $V_1 + \cdots + V_n$ es \textbf{suma directa} dsi cada vector de $V_1 + \cdots + V_n$ se puede expresar de forma única de vectores de $V_1,\ldots,V_n$. La suma directa se denota $V_1 \oplus \cdots \oplus V_n$
+\end{defi}
+
+\begin{theorem}
+	Sean $V_1,\ldots,V_n$ subespacios vectoriales de $V$. Son equivalentes las afirmaciones:
+	\begin{enumerate}
+		\item $V_1 + \cdots + V_n$ es suma directa.
+		\item $V_i \cap (V_1 + \cdots + V_{i-1} + V_{i+1} + \cdots + V_n) = \lbrace 0 \rbrace$ para cada $i=1,\ldots,n$.
+		\item Si $v_1+\ldots+v_n=0$ con $v_j \in V_j$ entonces $v_1=\ldots=v_n=0$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{lem}
+	Sea $\mathcal{B}_i$ una base del subespacio vectorial $V_i$ de $V$ para $i=1,\ldots,n$. Son ciertas las afirmaciones:
+	\begin{enumerate}
+		\item $\mathcal{B}_1 \cup \cdots \cup \mathcal{B}_n$ es sistema generador de $V_1 + \cdots + V_n$.
+		\item $V_1 + \cdots + V_n$ es suma directa si y sólo si $\mathcal{B}_1 \cup \cdots \cup \mathcal{B}_n$ es una base de $V_1 + \cdots + V_n$.
+		\item $V_1 + \cdots + V_n$ es suma directa si y sólo si $dim(V_1 + \cdots + V_n)=dim(V_1) + \cdots + dim(V_n)$.
+	\end{enumerate}
+\end{lem}
+
+\subsection{Subespacios suplementarios en un espacio vectorial}
+
+\begin{defi}
+	Los \textbf{subespacios vectoriales} $U$ y $W$ son \textbf{suplementarios} en $V$ si
+	\[U \oplus W = V\] 
+	O lo que es lo mismo
+	\[
+	dim(U)+dim(W)= dim(U+W)=dim(V)
+	\]
+\end{defi}
+
+\begin{prop}
+	$\mathcal{B}_1 \cup \mathcal{B}_2$ es una vase de $V$ si y sólo si $L(\mathcal{B}_1)$ y $L(\mathcal{B}_2)$ son suplementarios.
+\end{prop}
+
+\subsection{Fórmula de dimensiones de Grassmann}
+
+\begin{theorem}[Fórmula de Grassmann]
+	Si $U$ y $W$ son subespacios vectoriales de $V$ entonces
+	\[
+	dim(U+W)=dim(U)+dim(W)-dim(U \cap W)
+	\]
+\end{theorem}
+
+\section{El espacio cociente módulo un subespacio vectorial}
+
+Para cada subespacio $U$ de $V$ se define la relación de equivalencia
+\[
+u \sim_U w \Leftrightarrow u - w \in U
+\]
+
+\begin{defi}
+	Sea $U$ subespacio vectorial de $V$. La \textbf{clase de equivalencia} de $v \in V$ módulo $U$ es el conjunto
+	\[
+	v+U=\lbrace u+v: u \in U\rbrace
+	\]
+	El \textbf{espacio cociente de $V$ módulo $U$} es el conjunto de clases de equivalencia módulo $U$
+	\[
+	V/U = \lbrace v+U : v \in V\rbrace
+	\]
+\end{defi}
+
+\begin{theorem}
+	Si $V$ es un espacio vectorial de dimensión $d$ y $U$ un subespacio vectorial de $V$ de dimensión $k$, entonces $V/U$ es un espacio vectorial de dimension $n-k$. Por lo tanto
+	\[
+	dim(V/U)=dim(V) - dim (U)
+	\]
+	Además, si $\lbrace v_{k+1},\ldots,v_d\rbrace$ es un conjunto de vectores que extiende cualquier base de $U$ a una base de $V$ entonces $\lbrace v_{k+1}+U,\ldots,v_d\rbrace+U$ es una base de $V/U$.
+\end{theorem}
